@@ -7,13 +7,17 @@ const context = {
     key: 'example',
     isSSR: true
   };
-  console.log('server side', context);
+
+
 const clientSide = initFromServerSideClient(client, context);
+
 clientSide.on('ready', () => {
     console.log('flags', clientSide.allFlags());
 })
-clientSide.serverSide = client;
+
+
 export default clientSide;
+
 export function getServerSideClient() {
     return client;
 }
