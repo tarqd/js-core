@@ -1,0 +1,16 @@
+{
+  "name": "ldclient",
+  "version": "1.0.0",
+  "description": "",
+  "module": "ldclient.js",
+  "browser": "ldclient.browser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@launchdarkly/node-server-sdk": "^9.0.4",
+    "launchdarkly-js-client-sdk": "^3.1.4"
+  },
+  "author": "",
+  "license": "ISC"
+}
