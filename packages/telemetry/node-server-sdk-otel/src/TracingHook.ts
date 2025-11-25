@@ -22,6 +22,7 @@ const FEATURE_FLAG_VARIATION_INDEX_ATTR = `${FEATURE_FLAG_RESULT_ATTR}.variation
 const FEATURE_FLAG_REASON_ATTR = `${FEATURE_FLAG_RESULT_ATTR}.reason`;
 const FEATURE_FLAG_IN_EXPERIMENT_ATTR = `${FEATURE_FLAG_REASON_ATTR}.inExperiment`;
 const FEATURE_FLAG_SET_ID = `${FEATURE_FLAG_SCOPE}.set.id`;
+const FEATURE_FLAG_DEFAULT_VALUE_ATTR = `${FEATURE_FLAG_SCOPE}.defaultValue`; 
 
 const TRACING_HOOK_NAME = 'LaunchDarkly Tracing Hook';
 
@@ -61,6 +62,12 @@ export interface TracingHookOptions {
   includeValue?: boolean;
 
   /**
+   * If set the true, then the tracing hook will add the default value / fallback value to span events and spans
+   * 
+   * The default is false
+   */
+   includeDefaultValue?: boolean;
+  /**
    * Set to use a custom logging configuration, otherwise the logging will be done
    * using `console`.
    */
@@ -72,6 +79,7 @@ export interface TracingHookOptions {
 interface ValidatedHookOptions {
   spans: boolean;
   includeValue: boolean;
+  includeDefaultValue: boolean;
   logger: LDLogger;
   environmentId?: string;
 }
@@ -83,6 +91,7 @@ type SpanTraceData = {
 const defaultOptions: ValidatedHookOptions = {
   spans: false,
   includeValue: false,
+  includeDefaultValue: false,
   logger: basicLogger({ name: TRACING_HOOK_NAME }),
   environmentId: undefined,
 };
@@ -93,7 +102,15 @@ function validateOptions(options?: TracingHookOptions): ValidatedHookOptions {
   if (options?.logger !== undefined) {
     validatedOptions.logger = new SafeLogger(options.logger, defaultOptions.logger);
   }
-
+  if (options?.includeDefaultValue !== undefined) {
+    if (TypeValidators.Boolean.is(options.includeDefaultValue)) {
+      validatedOptions.includeDefaultValue = options.includeDefaultValue;
+    } else {
+      validatedOptions.logger.error(
+        OptionMessages.wrongOptionType('includeDefaultValue', 'boolean', typeof options?.includeDefaultValue),
+      );
+    }
+  }
   if (options?.includeValue !== undefined) {
     if (TypeValidators.Boolean.is(options.includeValue)) {
       validatedOptions.includeValue = options.includeValue;
@@ -178,6 +195,9 @@ export default class TracingHook implements integrations.Hook {
       const span = this._tracer.startSpan(hookContext.method, undefined, context.active());
       span.setAttribute(FEATURE_FLAG_CONTEXT_ID_ATTR, canonicalKey);
       span.setAttribute(FEATURE_FLAG_KEY_ATTR, hookContext.flagKey);
+      if (this._options.includeDefaultValue) {
+        span.setAttribute(FEATURE_FLAG_DEFAULT_VALUE_ATTR, JSON.stringify(hookContext.defaultValue));
+      }
 
       return { ...data, span };
     }
@@ -200,6 +220,7 @@ export default class TracingHook implements integrations.Hook {
         [FEATURE_FLAG_KEY_ATTR]: hookContext.flagKey,
         [FEATURE_FLAG_PROVIDER_ATTR]: 'LaunchDarkly',
         [FEATURE_FLAG_CONTEXT_ID_ATTR]: Context.fromLDContext(hookContext.context).canonicalKey,
+        
       };
       if (typeof detail.variationIndex === 'number') {
         eventAttributes[FEATURE_FLAG_VARIATION_INDEX_ATTR] = detail.variationIndex;
@@ -214,6 +235,9 @@ export default class TracingHook implements integrations.Hook {
       }
       if (this._options.includeValue) {
         eventAttributes[FEATURE_FLAG_VALUE_ATTR] = JSON.stringify(detail.value);
+      }
+      if (this._options.includeDefaultValue) {
+        eventAttributes[FEATURE_FLAG_DEFAULT_VALUE_ATTR] = JSON.stringify(hookContext.defaultValue);
       }
       currentTrace.addEvent(FEATURE_FLAG_SCOPE, eventAttributes);
     }
