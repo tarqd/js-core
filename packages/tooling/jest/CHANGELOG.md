@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.0](https://github.com/tarqd/js-core/compare/jest-v0.1.13...jest-v0.2.0) (2025-11-25)
+
+
+### Features
+
+* Implement jest mocks for react-native. ([#535](https://github.com/tarqd/js-core/issues/535)) ([aee09c8](https://github.com/tarqd/js-core/commit/aee09c87e1810795108157dcd9ab8cfb9fe05020))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/react-native-client-sdk bumped from ~10.12.1 to ~10.13.0
+
 ## [0.1.13](https://github.com/launchdarkly/js-core/compare/jest-v0.1.12...jest-v0.1.13) (2025-11-21)
 
 

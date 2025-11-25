@@ -20,6 +20,29 @@ All notable changes to the LaunchDarkly SDK for Vercel Edge Config will be docum
   * dependencies
     * @launchdarkly/js-server-sdk-common-edge bumped from 2.2.1 to 2.2.2
 
+## [1.4.0](https://github.com/tarqd/js-core/compare/vercel-server-sdk-v1.3.35...vercel-server-sdk-v1.4.0) (2025-11-25)
+
+
+### Features
+
+* React-native support for auto-env attributes. Only affects react-native package. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+* Update eslint jest configuration and versions. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+
+
+### Bug Fixes
+
+* Improve serialization/deserialization overhead with EdgeFeatureStore ([#914](https://github.com/tarqd/js-core/issues/914)) ([76d614f](https://github.com/tarqd/js-core/commit/76d614f8b036750275cec90ac5b5d68322bf912e))
+* improving payload processing overhead when payload does not change ([#918](https://github.com/tarqd/js-core/issues/918)) ([be2ee75](https://github.com/tarqd/js-core/commit/be2ee75c1b23d484bddbe1bc4f6662872fb1d3fb))
+* Update to major version of @vercel/edge-config ([#393](https://github.com/tarqd/js-core/issues/393)) ([bbaf01c](https://github.com/tarqd/js-core/commit/bbaf01cd4afa74e5e2da13ba54799c4f689a3f49))
+* Use release-please to update SDK versions ([#1013](https://github.com/tarqd/js-core/issues/1013)) ([d1d11f1](https://github.com/tarqd/js-core/commit/d1d11f1feb29fc5ccbf14506aa374162d452be42))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common-edge bumped from 2.6.9 to 2.7.0
+
 ## [1.3.35](https://github.com/launchdarkly/js-core/compare/vercel-server-sdk-v1.3.34...vercel-server-sdk-v1.3.35) (2025-11-21)
 
 

@@ -2,6 +2,41 @@
 
 All notable changes to `@launchdarkly/node-server-sdk` will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [9.11.0](https://github.com/tarqd/js-core/compare/node-server-sdk-v9.10.3...node-server-sdk-v9.11.0) (2025-11-25)
+
+
+### Features
+
+* Add plugin support for node. ([#880](https://github.com/tarqd/js-core/issues/880)) ([6b7bf7e](https://github.com/tarqd/js-core/commit/6b7bf7eca3b26c3d6e04736fee9ec2f137e743a5))
+* Add support for conditional event source capabilities. ([#577](https://github.com/tarqd/js-core/issues/577)) ([fe82500](https://github.com/tarqd/js-core/commit/fe82500f28cf8d8311502098aa6cc2e73932064e))
+* Add support for hooks. ([ce6f041](https://github.com/tarqd/js-core/commit/ce6f0414567945bbe39c22df7cf6ae24c2e32931))
+* Add support for optional timeout for waitForInitialization. ([#437](https://github.com/tarqd/js-core/issues/437)) ([c6032b3](https://github.com/tarqd/js-core/commit/c6032b3dd80421ff42aefd729442d18cd27b16e4))
+* Add wrapper support. ([#526](https://github.com/tarqd/js-core/issues/526)) ([29a43a4](https://github.com/tarqd/js-core/commit/29a43a4b5243e16d2f746340d4d50467e0875980))
+* Apply private property naming standard. Mangle browser private properties. ([#620](https://github.com/tarqd/js-core/issues/620)) ([3e6d404](https://github.com/tarqd/js-core/commit/3e6d404ae665c5cc7e5a1394a59c8f2c9d5d682a))
+* Environment ID support for hooks ([#823](https://github.com/tarqd/js-core/issues/823)) ([63dc9f9](https://github.com/tarqd/js-core/commit/63dc9f9f1300c598e79be27909f8195ac66d54ef))
+* Implement handling for gzip compressed responses. ([#367](https://github.com/tarqd/js-core/issues/367)) ([a52bee1](https://github.com/tarqd/js-core/commit/a52bee19b909b210b4957d46a300777de0e27ada))
+* Option to use gzip to compress event ([#814](https://github.com/tarqd/js-core/issues/814)) ([4e91431](https://github.com/tarqd/js-core/commit/4e914317d31378e2a1eaed5aa03e0ac6beac43d5))
+* React-native support for auto-env attributes. Only affects react-native package. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+* Update eslint jest configuration and versions. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+
+
+### Bug Fixes
+
+* Configure max backoff and jitter ratio to ensure exponential backoff. ([#463](https://github.com/tarqd/js-core/issues/463)) ([050007d](https://github.com/tarqd/js-core/commit/050007d8153ecd67633a05761e9ea3b27e15b0ca))
+* Fix an issue where failed http requests could cause an unhandled promise rejection. ([#371](https://github.com/tarqd/js-core/issues/371)) ([dd6d0e7](https://github.com/tarqd/js-core/commit/dd6d0e7431786e15d6f086f5a667f315cf1094a2))
+* Fix typo in proxy-authorization header for basic authentication. ([#720](https://github.com/tarqd/js-core/issues/720)) ([220b6d6](https://github.com/tarqd/js-core/commit/220b6d6d34331d271ca30f0cae363c734fcc38bf)), closes [#718](https://github.com/tarqd/js-core/issues/718)
+* Log errors when there is no error event handler. ([#495](https://github.com/tarqd/js-core/issues/495)) ([6b73699](https://github.com/tarqd/js-core/commit/6b73699061efa46cd291756d3932fcf78d480f40))
+* Update event source to better log unexpected disconnects. ([#451](https://github.com/tarqd/js-core/issues/451)) ([0c83afd](https://github.com/tarqd/js-core/commit/0c83afd5f539ecce09f4f5723bc01e5584cc268d))
+* Update launchdarkly-eventsource to 2.0.3. ([#468](https://github.com/tarqd/js-core/issues/468)) ([c0f934d](https://github.com/tarqd/js-core/commit/c0f934db6066f4767e2f52b332adf4a3c2837e40)), closes [#458](https://github.com/tarqd/js-core/issues/458)
+* Use release-please to update SDK versions ([#1013](https://github.com/tarqd/js-core/issues/1013)) ([d1d11f1](https://github.com/tarqd/js-core/commit/d1d11f1feb29fc5ccbf14506aa374162d452be42))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common bumped from 2.16.2 to 2.17.0
+
 ## [9.10.3](https://github.com/launchdarkly/js-core/compare/node-server-sdk-v9.10.2...node-server-sdk-v9.10.3) (2025-11-21)
 
 

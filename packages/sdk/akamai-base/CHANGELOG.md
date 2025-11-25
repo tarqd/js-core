@@ -30,6 +30,32 @@ All notable changes to the LaunchDarkly SDK for Akamai Workers will be documente
     * @launchdarkly/akamai-edgeworker-sdk-common bumped from ^1.1.1 to ^1.1.2
     * @launchdarkly/js-server-sdk-common bumped from ^2.2.1 to ^2.2.2
 
+## [4.0.0](https://github.com/tarqd/js-core/compare/akamai-server-base-sdk-v3.0.11...akamai-server-base-sdk-v4.0.0) (2025-11-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* Replace prefetch behavior with simple TTL cache ([#786](https://github.com/tarqd/js-core/issues/786))
+
+### Features
+
+* React-native support for auto-env attributes. Only affects react-native package. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+* Replace prefetch behavior with simple TTL cache ([#786](https://github.com/tarqd/js-core/issues/786)) ([48b48cf](https://github.com/tarqd/js-core/commit/48b48cf69d518dc70a557ffd1dfb0209aee0b124))
+* Update eslint jest configuration and versions. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+
+
+### Bug Fixes
+
+* Use release-please to update SDK versions ([#1013](https://github.com/tarqd/js-core/issues/1013)) ([d1d11f1](https://github.com/tarqd/js-core/commit/d1d11f1feb29fc5ccbf14506aa374162d452be42))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/akamai-edgeworker-sdk-common bumped from ^2.0.10 to ^3.0.0
+    * @launchdarkly/js-server-sdk-common bumped from ^2.16.2 to ^2.17.0
+
 ## [3.0.11](https://github.com/launchdarkly/js-core/compare/akamai-server-base-sdk-v3.0.10...akamai-server-base-sdk-v3.0.11) (2025-11-21)
 
 

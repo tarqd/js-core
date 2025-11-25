@@ -1,5 +1,29 @@
 # Changelog
 
+## [4.3.0](https://github.com/tarqd/js-core/compare/node-server-sdk-redis-v4.2.15...node-server-sdk-redis-v4.3.0) (2025-11-25)
+
+
+### Features
+
+* Apply private property naming standard. Mangle browser private properties. ([#620](https://github.com/tarqd/js-core/issues/620)) ([3e6d404](https://github.com/tarqd/js-core/commit/3e6d404ae665c5cc7e5a1394a59c8f2c9d5d682a))
+* React-native support for auto-env attributes. Only affects react-native package. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+* Update eslint jest configuration and versions. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+
+
+### Bug Fixes
+
+* Correct store/telemetry peer deps. ([#439](https://github.com/tarqd/js-core/issues/439)) ([b963554](https://github.com/tarqd/js-core/commit/b9635541ee0a31094063075faae942698f2e8180))
+* Fix typings for big segment store factories. ([#413](https://github.com/tarqd/js-core/issues/413)) ([723804b](https://github.com/tarqd/js-core/commit/723804bb7db19f485d84940715c69e34cc08062f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @launchdarkly/node-server-sdk bumped from 9.10.3 to 9.11.0
+  * peerDependencies
+    * @launchdarkly/node-server-sdk bumped from >=9.4.3 to >=9.11.0
+
 ## [4.2.15](https://github.com/launchdarkly/js-core/compare/node-server-sdk-redis-v4.2.14...node-server-sdk-redis-v4.2.15) (2025-11-21)
 
 
