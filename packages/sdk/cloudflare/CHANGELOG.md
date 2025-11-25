@@ -21,6 +21,31 @@ All notable changes to the LaunchDarkly SDK for Cloudflare Workers will be docum
   * devDependencies
     * @launchdarkly/js-server-sdk-common-edge bumped from 2.2.1 to 2.2.2
 
+## [2.8.0](https://github.com/tarqd/js-core/compare/cloudflare-server-sdk-v2.7.10...cloudflare-server-sdk-v2.8.0) (2025-11-25)
+
+
+### Features
+
+* Add TTL caching for data store ([#801](https://github.com/tarqd/js-core/issues/801)) ([c1de485](https://github.com/tarqd/js-core/commit/c1de4850c81dff8ad52276c2bfc2a2aeb87bd2d9))
+* Apply private property naming standard. Mangle browser private properties. ([#620](https://github.com/tarqd/js-core/issues/620)) ([3e6d404](https://github.com/tarqd/js-core/commit/3e6d404ae665c5cc7e5a1394a59c8f2c9d5d682a))
+* JSR support for Cloudflare SDK. ([#415](https://github.com/tarqd/js-core/issues/415)) ([30866f3](https://github.com/tarqd/js-core/commit/30866f34a41b74e2cf08457f2382c647bc37bd64))
+* React-native support for auto-env attributes. Only affects react-native package. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+* Update eslint jest configuration and versions. ([deea99c](https://github.com/tarqd/js-core/commit/deea99ca2fbb3865f2ce55a83b2cf12e0ae2db5e))
+
+
+### Bug Fixes
+
+* cloudflare-server-sdk exports to support using migrations ([#854](https://github.com/tarqd/js-core/issues/854)) ([3366775](https://github.com/tarqd/js-core/commit/33667756b9aef26ad10062f02299597aa5552ac1))
+* Include name and version in platform. ([#453](https://github.com/tarqd/js-core/issues/453)) ([3b4e212](https://github.com/tarqd/js-core/commit/3b4e212a563e5dc8b4953fadb6b31160076ec001))
+* Remove bundled dependency from package.json. ([#711](https://github.com/tarqd/js-core/issues/711)) ([0fb5375](https://github.com/tarqd/js-core/commit/0fb5375443a5137c3588d454465794eb530cb982))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common-edge bumped from 2.6.9 to 2.7.0
+
 ## [2.7.10](https://github.com/launchdarkly/js-core/compare/cloudflare-server-sdk-v2.7.9...cloudflare-server-sdk-v2.7.10) (2025-08-29)
 
 
