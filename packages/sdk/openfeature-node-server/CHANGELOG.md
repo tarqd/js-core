@@ -1,5 +1,35 @@
 # Changelog
 
+## [3.0.0](https://github.com/tarqd/js-core/compare/openfeature-node-server-v2.0.7...openfeature-node-server-v3.0.0) (2026-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Map LaunchDarkly evaluation reasons to OpenFeature reasons ([#1887](https://github.com/tarqd/js-core/issues/1887))
+
+### Features
+
+* openfeature-node-server migration ([#1767](https://github.com/tarqd/js-core/issues/1767)) ([22fb0b2](https://github.com/tarqd/js-core/commit/22fb0b230412e97e930cb6c7414e98beb37f587a))
+* Populate OpenFeature flag metadata from the evaluation reason ([#1869](https://github.com/tarqd/js-core/issues/1869)) ([d5bdaeb](https://github.com/tarqd/js-core/commit/d5bdaebb515a5357cbdc6da52b5b911bc4af7351))
+
+
+### Bug Fixes
+
+* Map LaunchDarkly evaluation reasons to OpenFeature reasons ([#1887](https://github.com/tarqd/js-core/issues/1887)) ([70291f4](https://github.com/tarqd/js-core/commit/70291f4862384f18ef4e9bf11045c7f4df73a116))
+* **openfeature-node-server:** identify floor for node server sdk peer dep ([#1787](https://github.com/tarqd/js-core/issues/1787)) ([d42203a](https://github.com/tarqd/js-core/commit/d42203a9d32c1f0d8365a09471bf33712580719c))
+* **openfeature-node-server:** updating public README and CHANGELOG ([#1782](https://github.com/tarqd/js-core/issues/1782)) ([e55c1db](https://github.com/tarqd/js-core/commit/e55c1db37857bae2fd6c556f31a0e04cb9988494))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/openfeature-js-server-common bumped from 2.0.3 to 3.0.0
+  * devDependencies
+    * @launchdarkly/node-server-sdk bumped from 9.13.8 to 9.14.0
+  * peerDependencies
+    * @launchdarkly/node-server-sdk bumped from ^9.0.0 to ^9.14.0
+
 ## [2.0.7](https://github.com/launchdarkly/js-core/compare/openfeature-node-server-v2.0.6...openfeature-node-server-v2.0.7) (2026-09-29)
 
 

@@ -86,6 +86,22 @@ All notable changes to the LaunchDarkly SDK for Akamai Workers will be documente
   * dependencies
     * @launchdarkly/js-server-sdk-common bumped from ^2.2.1 to ^2.2.2
 
+## [2.0.38](https://github.com/tarqd/js-core/compare/akamai-edgeworker-sdk-common-v2.0.37...akamai-edgeworker-sdk-common-v2.0.38) (2026-09-29)
+
+
+### Bug Fixes
+
+* enabling eslint `ban-types` rule and fixed string typing ([#1313](https://github.com/tarqd/js-core/issues/1313)) ([f6d907f](https://github.com/tarqd/js-core/commit/f6d907f1a65abd0b41827f3c827e6dad896b16b1))
+* explicit return types and TS6 source compatibility fixes ([#1418](https://github.com/tarqd/js-core/issues/1418)) ([9c131a2](https://github.com/tarqd/js-core/commit/9c131a2e731c97a7fd4cf7ec1fe11efbbf49d6fb))
+* **perf:** reduce Akamai CryptoJS bundle size ([#1877](https://github.com/tarqd/js-core/issues/1877)) ([0b3e1ec](https://github.com/tarqd/js-core/commit/0b3e1ec66ae1272733d4fc80d5bd82f8c9d1cf17))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common bumped from ^2.21.6 to ^2.22.0
+
 ## [2.0.37](https://github.com/launchdarkly/js-core/compare/akamai-edgeworker-sdk-common-v2.0.36...akamai-edgeworker-sdk-common-v2.0.37) (2026-09-29)
 
 

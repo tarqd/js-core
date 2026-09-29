@@ -1,5 +1,71 @@
 # Changelog
 
+## [1.33.0](https://github.com/tarqd/js-core/compare/js-client-sdk-common-v1.32.2...js-client-sdk-common-v1.33.0) (2026-09-29)
+
+
+### Features
+
+* Add experimental FDv2 configuration (unused) ([#1169](https://github.com/tarqd/js-core/issues/1169)) ([c7130cc](https://github.com/tarqd/js-core/commit/c7130ccabe19a699b3c14dc949432ef1afb37b3d))
+* Add experimental FDv2 support for React Native. ([#1243](https://github.com/tarqd/js-core/issues/1243)) ([7ed2c08](https://github.com/tarqd/js-core/commit/7ed2c085cd35d35ffd6f48becb5a60f03b07ad1c))
+* Add explicit disableCache setting. ([6be89dd](https://github.com/tarqd/js-core/commit/6be89dd16098264a8c75761628f716c1b7387cb7))
+* add FDv1 fallback directive parsing and TTL data model ([#1781](https://github.com/tarqd/js-core/issues/1781)) ([4a213c3](https://github.com/tarqd/js-core/commit/4a213c31f8afc9f5713a60f3a5517ddbc8004cd5))
+* Add FDv1 polling synchronizer for FDv2 fallback (SDK-1923) ([#1159](https://github.com/tarqd/js-core/issues/1159)) ([498216a](https://github.com/tarqd/js-core/commit/498216acc43ad007e6888b1fdd53892cd231a4a7))
+* Add fdv2 mode configuration types and validation. ([#1135](https://github.com/tarqd/js-core/issues/1135)) ([6ee156c](https://github.com/tarqd/js-core/commit/6ee156c4e7055266d5e9d81afb43f4dd7d85f02d))
+* Add FDv2 polling initializer/synchronizer ([#1130](https://github.com/tarqd/js-core/issues/1130)) ([6777fc6](https://github.com/tarqd/js-core/commit/6777fc6f7b501dd0547f6eb7cd8e0f26c72aad9d))
+* Add FDv2 State Debouncer ([#1148](https://github.com/tarqd/js-core/issues/1148)) ([da3f72e](https://github.com/tarqd/js-core/commit/da3f72e2da800953582311fa640b7a63f166a35d))
+* Add FDv2 streaming initializer/synchronizer ([#1131](https://github.com/tarqd/js-core/issues/1131)) ([6602bbc](https://github.com/tarqd/js-core/commit/6602bbc54ddb40ce9a2a3af7722a204d813144ed))
+* Add FDv2DataSource composite data source orchestrator ([#1141](https://github.com/tarqd/js-core/issues/1141)) ([f02ae5a](https://github.com/tarqd/js-core/commit/f02ae5a3189d73022fb81221d532e95659da9f01))
+* Add flag eval model for FDv2. ([#1124](https://github.com/tarqd/js-core/issues/1124)) ([028e63f](https://github.com/tarqd/js-core/commit/028e63f34eb0f11c5c0d8d078baf0ec378b9e8e0))
+* Add mode resolution table for FDv2. ([#1146](https://github.com/tarqd/js-core/issues/1146)) ([ab2436d](https://github.com/tarqd/js-core/commit/ab2436dc677cfc923fba051aab649a2a7e959a3e))
+* add retry logic to FDv2 polling initializer ([#1230](https://github.com/tarqd/js-core/issues/1230)) ([fe8bd37](https://github.com/tarqd/js-core/commit/fe8bd375af48edfcfe83822bbbbe4546551c90d9))
+* adding start() method to common client sdk package ([#1244](https://github.com/tarqd/js-core/issues/1244)) ([7f5f468](https://github.com/tarqd/js-core/commit/7f5f468f93eaa4655d1432af5e7bf8819104700a))
+* adding the implementation for main process client ([#1103](https://github.com/tarqd/js-core/issues/1103)) ([0abb86c](https://github.com/tarqd/js-core/commit/0abb86c6f6ed95a644e671ce967c4be5fd2ad9d4))
+* Consolidate endpoint paths. Add FDv2 endpoints. ([#1125](https://github.com/tarqd/js-core/issues/1125)) ([297ef9d](https://github.com/tarqd/js-core/commit/297ef9d2793cdd750a9050674137257d6e18c809))
+* expose setConnectionMode on browser SDK ([#1232](https://github.com/tarqd/js-core/issues/1232)) ([9019808](https://github.com/tarqd/js-core/commit/9019808edd5f78cbddd9b031da1589cbaa49938f))
+* FDv2 Cache Initializer ([#1147](https://github.com/tarqd/js-core/issues/1147)) ([7d6299f](https://github.com/tarqd/js-core/commit/7d6299fc20dac864487b1f07f283c41e07bf73de))
+* FDv2 contract test wiring, suppressions, and example app, cleanup configuration exports. ([#1225](https://github.com/tarqd/js-core/issues/1225)) ([c67c5f6](https://github.com/tarqd/js-core/commit/c67c5f65f92e39d2e311b26d025a4b90112f2e4f))
+* FDv2 types, refined validators, and DataManager interface ([#1207](https://github.com/tarqd/js-core/issues/1207)) ([d7ccfc1](https://github.com/tarqd/js-core/commit/d7ccfc1a5359610d70751dc08e3b894bb7ecf334))
+* FDv2DataManagerBase for mode switching and data source lifecycle ([#1210](https://github.com/tarqd/js-core/issues/1210)) ([8f8051c](https://github.com/tarqd/js-core/commit/8f8051ca769d214a5df09fdf0e71c25f2b98a7f7))
+* FlagManager.applyChanges for FDv2 full/partial/none semantics ([#1208](https://github.com/tarqd/js-core/issues/1208)) ([d9a1bd7](https://github.com/tarqd/js-core/commit/d9a1bd7d24ea68e867496e93be0f3097b709392a))
+* **js-client-sdk:** add ability to customize storage impl ([#1404](https://github.com/tarqd/js-core/issues/1404)) ([77864cb](https://github.com/tarqd/js-core/commit/77864cb04f737c8aab4476422a2a2422c7be978c))
+* move bootstrap capability to js-client-common (SDK-1874) ([#1113](https://github.com/tarqd/js-core/issues/1113)) ([baa8ab4](https://github.com/tarqd/js-core/commit/baa8ab43898be51a498c2a8238e466f5194c2698))
+* Move FDv1 fallback directive parsing to the shared package ([#1981](https://github.com/tarqd/js-core/issues/1981)) ([e7a3b66](https://github.com/tarqd/js-core/commit/e7a3b6647caf3210c9cea40e7818f164537aa50f))
+* Prepare FDv2 EAP for browser and React Native SDKs ([#1419](https://github.com/tarqd/js-core/issues/1419)) ([6ee9c51](https://github.com/tarqd/js-core/commit/6ee9c515fe9aaf999fd7f0eb722d6df9a2d208d8))
+* SourceFactoryProvider for declarative data source creation ([#1209](https://github.com/tarqd/js-core/issues/1209)) ([e254f77](https://github.com/tarqd/js-core/commit/e254f771761b3d0d61a745a1e06f99f6216ff63a))
+* support per-mode FDv1 fallback configuration ([#1246](https://github.com/tarqd/js-core/issues/1246)) ([9956bce](https://github.com/tarqd/js-core/commit/9956bce2cc70642c63da79f904c5d5554892e046))
+* support waitForNetworkResults in FDv2 data manager ([#1280](https://github.com/tarqd/js-core/issues/1280)) ([df7fa9e](https://github.com/tarqd/js-core/commit/df7fa9e571703132ffa697e8a005f31d7ab866dd))
+* warn that payload filtering has no effect with FDv2 ([#1984](https://github.com/tarqd/js-core/issues/1984)) ([5e37aca](https://github.com/tarqd/js-core/commit/5e37aca49398ff01aa0c71b75d106699a1461cd3))
+* wire FDv2 data manager into BrowserClient ([#1222](https://github.com/tarqd/js-core/issues/1222)) ([0b855f0](https://github.com/tarqd/js-core/commit/0b855f0be6ad5fd086f293603d7880992d41452e))
+* wire registerDebugOverrides through client common ([#1368](https://github.com/tarqd/js-core/issues/1368)) ([9011c2a](https://github.com/tarqd/js-core/commit/9011c2a76f7460770efe3c07b3e16338b647d9df))
+
+
+### Bug Fixes
+
+* add defensive cycle guard to prerequisite evaluation ([#1816](https://github.com/tarqd/js-core/issues/1816)) ([9426b42](https://github.com/tarqd/js-core/commit/9426b42dbb5e96914c62462ff7281ec6e24727b3))
+* Allow 0 status code to be handled by the streaming error filter. ([d96b46b](https://github.com/tarqd/js-core/commit/d96b46b01331842647f71cccfaf70ab104029849))
+* Automatically stream when individual flag event listeners are re… ([#1114](https://github.com/tarqd/js-core/issues/1114)) ([c15b7a8](https://github.com/tarqd/js-core/commit/c15b7a8aba3712f3b077722d0df11443b58d4e0c))
+* client side fdv2 payload type ([#1778](https://github.com/tarqd/js-core/issues/1778)) ([0b9fde5](https://github.com/tarqd/js-core/commit/0b9fde5d88dc0816937f5fb0baa6ca205388e53f))
+* **common:** remove non-spec fields from FDv2 GoodbyeObject ([#1341](https://github.com/tarqd/js-core/issues/1341)) ([feb9aa7](https://github.com/tarqd/js-core/commit/feb9aa7f6217bc9b3a9794bc71867e14112ea928))
+* enabling eslint `ban-types` rule and fixed string typing ([#1313](https://github.com/tarqd/js-core/issues/1313)) ([f6d907f](https://github.com/tarqd/js-core/commit/f6d907f1a65abd0b41827f3c827e6dad896b16b1))
+* FDv2 - Support dynamic reconnect URL for streaming. Handle 'error' event types for SSE. ([#1252](https://github.com/tarqd/js-core/issues/1252)) ([4ef6cdd](https://github.com/tarqd/js-core/commit/4ef6cdd3f07a15e9a6b3b831defcf41d10e6334b))
+* FDv2 -- cache initializer returns transfer-none on cache miss ([#1275](https://github.com/tarqd/js-core/issues/1275)) ([7bf3c31](https://github.com/tarqd/js-core/commit/7bf3c3122dc01146988d3722ff659f011967ea3d))
+* FDv2 Only -- Adjust the behavior of initialization when only cache initializers are available. ([#1304](https://github.com/tarqd/js-core/issues/1304)) ([9a2b25a](https://github.com/tarqd/js-core/commit/9a2b25afd1507b2b6e42b85a32edea7a40be8bb0))
+* Fix the calculation of the basis parameter for FDv2 streaming. (Does not affect FDv1). ([#1165](https://github.com/tarqd/js-core/issues/1165)) ([bbdd6c6](https://github.com/tarqd/js-core/commit/bbdd6c6f23fcc2a2fbd3ff72a39d872853ceef38))
+* Improve error handling for FDv2 streaming ([d96b46b](https://github.com/tarqd/js-core/commit/d96b46b01331842647f71cccfaf70ab104029849))
+* Max cached context enforcement wasn't working for 0. ([6be89dd](https://github.com/tarqd/js-core/commit/6be89dd16098264a8c75761628f716c1b7387cb7))
+* migrate anonymous context namespace to general namespace ([#1312](https://github.com/tarqd/js-core/issues/1312)) ([afbed0f](https://github.com/tarqd/js-core/commit/afbed0f299808f21dd4a8aa5159fe8d31879e1b9))
+* Preserve FDv2 protocol error listeners and stop misreporting server error frames ([#2028](https://github.com/tarqd/js-core/issues/2028)) ([3d80bef](https://github.com/tarqd/js-core/commit/3d80bef9f56872ed1c625ba1518aed2ebe30c1fd))
+* rename FDv2 object kind from `flagEval` to `flag-eval` ([#1185](https://github.com/tarqd/js-core/issues/1185)) ([cd4b119](https://github.com/tarqd/js-core/commit/cd4b1190362373d9a16582dea0f65a786210e8e3))
+* **sdk-client-common:** `identify()` bootstrap does not set flagstore in FDv2 ([#1837](https://github.com/tarqd/js-core/issues/1837)) ([574f816](https://github.com/tarqd/js-core/commit/574f8164ed930423c44d82d4c1ad210387bfc5b9))
+* **sdk-client:** `executeAfterTrack` ordering ([58e063b](https://github.com/tarqd/js-core/commit/58e063bad4651e25beea644425bea23a20f4870f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-sdk-common bumped from 2.27.0 to 2.28.0
+
 ## [1.32.2](https://github.com/launchdarkly/js-core/compare/js-client-sdk-common-v1.32.1...js-client-sdk-common-v1.32.2) (2026-09-29)
 
 

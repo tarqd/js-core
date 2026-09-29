@@ -1,5 +1,32 @@
 # Changelog
 
+## [3.0.0](https://github.com/tarqd/js-core/compare/openfeature-js-server-common-v2.0.3...openfeature-js-server-common-v3.0.0) (2026-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Map LaunchDarkly evaluation reasons to OpenFeature reasons ([#1887](https://github.com/tarqd/js-core/issues/1887))
+* Map the WRONG_TYPE error kind to TYPE_MISMATCH ([#1888](https://github.com/tarqd/js-core/issues/1888))
+* release `@launchdarkly/openfeature-js-server-common` ([#1754](https://github.com/tarqd/js-core/issues/1754))
+
+### Features
+
+* Populate OpenFeature flag metadata from the evaluation reason ([#1869](https://github.com/tarqd/js-core/issues/1869)) ([d5bdaeb](https://github.com/tarqd/js-core/commit/d5bdaebb515a5357cbdc6da52b5b911bc4af7351))
+* release `@launchdarkly/openfeature-js-server-common` ([#1754](https://github.com/tarqd/js-core/issues/1754)) ([f83f6db](https://github.com/tarqd/js-core/commit/f83f6db16b6c77f1cbc5cfeb4dfd47b7c17b71bf))
+
+
+### Bug Fixes
+
+* Map LaunchDarkly evaluation reasons to OpenFeature reasons ([#1887](https://github.com/tarqd/js-core/issues/1887)) ([70291f4](https://github.com/tarqd/js-core/commit/70291f4862384f18ef4e9bf11045c7f4df73a116))
+* Map the WRONG_TYPE error kind to TYPE_MISMATCH ([#1888](https://github.com/tarqd/js-core/issues/1888)) ([2d60942](https://github.com/tarqd/js-core/commit/2d60942d15812fea1cf82be72101492422da813d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-sdk-common bumped from 2.27.0 to 2.28.0
+
 ## [2.0.3](https://github.com/launchdarkly/js-core/compare/openfeature-js-server-common-v2.0.2...openfeature-js-server-common-v2.0.3) (2026-09-29)
 
 

@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/tarqd/js-core/compare/jest-v1.0.31...jest-v2.0.0) (2026-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* updating to major version 1 ([#1089](https://github.com/tarqd/js-core/issues/1089))
+
+### Bug Fixes
+
+* updating to major version 1 ([#1089](https://github.com/tarqd/js-core/issues/1089)) ([4c194d8](https://github.com/tarqd/js-core/commit/4c194d8112d39e3693688c0cbe0bc7ef27b67869))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/react-native-client-sdk bumped from ~10.20.4 to ~10.21.0
+
 ## [1.0.31](https://github.com/launchdarkly/js-core/compare/jest-v1.0.30...jest-v1.0.31) (2026-09-29)
 
 

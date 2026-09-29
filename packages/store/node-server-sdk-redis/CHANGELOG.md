@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.2.44](https://github.com/tarqd/js-core/compare/node-server-sdk-redis-v4.2.43...node-server-sdk-redis-v4.2.44) (2026-09-29)
+
+
+### Bug Fixes
+
+* **persistent-store:** add error logs for upsert ([#1985](https://github.com/tarqd/js-core/issues/1985)) ([5ff1cf2](https://github.com/tarqd/js-core/commit/5ff1cf240f6c197c38cc1caceabadf12b3c89ea5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @launchdarkly/node-server-sdk bumped from 9.13.8 to 9.14.0
+  * peerDependencies
+    * @launchdarkly/node-server-sdk bumped from >=9.11.3 to >=9.14.0
+
 ## [4.2.43](https://github.com/launchdarkly/js-core/compare/node-server-sdk-redis-v4.2.42...node-server-sdk-redis-v4.2.43) (2026-09-29)
 
 
