@@ -7,6 +7,20 @@
 import { LDClientImpl, LDContext } from '@launchdarkly/js-server-sdk-common';
 
 import { initAi } from '../src';
+import { AIProviderFactory } from '../src/api/providers/AIProviderFactory';
+
+// Stub provider creation so invoke() runs through TrackedChat without a real model. The fake
+// provider echoes back which model and system prompt it was built with.
+jest.mock('../src/api/providers/AIProviderFactory');
+(AIProviderFactory.create as jest.Mock).mockImplementation(async (config: any) => ({
+  invokeModel: jest.fn(async (messages: any[]) => ({
+    message: {
+      role: 'assistant',
+      content: `model=${config.model?.name} system=${messages[0]?.content}`,
+    },
+    metrics: { success: true },
+  })),
+}));
 
 const context: LDContext = { kind: 'user', key: 'user-1' };
 const FLAG_KEY = 'my-ai-config';
@@ -176,5 +190,71 @@ describe('AI client after a failed SDK init', () => {
       const config = await getConfig(aiClient);
       expect(config.enabled).toBe(false);
     }
+  });
+
+  describe('invoke path (createChat + TrackedChat.invoke)', () => {
+    const fallback = {
+      enabled: true,
+      model: { name: 'fallback-model' },
+      provider: { name: 'openai' },
+      messages: [{ role: 'system' as const, content: 'fallback' }],
+    };
+
+    it('createChat with a disabled default returns no chat while not ready, and a working chat after recovery', async () => {
+      const made = makeClient();
+      ({ ldClient } = made);
+      const { stream, aiClient } = made;
+      expect(stream.failWith(503)).toBe(true);
+
+      expect(await aiClient.createChat(FLAG_KEY, context, { enabled: false })).toBeUndefined();
+
+      stream.put({ [FLAG_KEY]: aiFlag });
+
+      const chat = await aiClient.createChat(FLAG_KEY, context, { enabled: false });
+      expect(chat).toBeDefined();
+      const res = await chat!.invoke('hi');
+      expect(res.message.content).toBe('model=real-model system=hello');
+    });
+
+    it('a chat created while not ready keeps the fallback config on every invoke, even after recovery', async () => {
+      const made = makeClient();
+      ({ ldClient } = made);
+      const { stream, aiClient } = made;
+      expect(stream.failWith(503)).toBe(true);
+
+      const staleChat = await aiClient.createChat(FLAG_KEY, context, fallback);
+      expect((await staleChat!.invoke('one')).message.content).toBe(
+        'model=fallback-model system=fallback',
+      );
+
+      stream.put({ [FLAG_KEY]: aiFlag });
+      expect(ldClient.initialized()).toBe(true);
+
+      // Same chat instance: invoke never re-evaluates the flag, so it stays on the fallback.
+      for (let i = 0; i < 3; i += 1) {
+        // eslint-disable-next-line no-await-in-loop
+        const res = await staleChat!.invoke(`again ${i}`);
+        expect(res.message.content).toBe('model=fallback-model system=fallback');
+        expect(res.metrics.success).toBe(true);
+      }
+
+      // A new createChat after recovery picks up the real config.
+      const freshChat = await aiClient.createChat(FLAG_KEY, context, fallback);
+      expect((await freshChat!.invoke('hi')).message.content).toBe('model=real-model system=hello');
+    });
+
+    it('after an unrecoverable error (401), every createChat keeps using the default', async () => {
+      const made = makeClient();
+      ({ ldClient } = made);
+      const { stream, aiClient } = made;
+      expect(stream.failWith(401)).toBe(false);
+      stream.put({ [FLAG_KEY]: aiFlag });
+
+      expect(await aiClient.createChat(FLAG_KEY, context, { enabled: false })).toBeUndefined();
+      const chat = await aiClient.createChat(FLAG_KEY, context, fallback);
+      expect((await chat!.invoke('hi')).message.content).toBe(
+        'model=fallback-model system=fallback',
+      );
+    });
   });
 });
