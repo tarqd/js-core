@@ -2,6 +2,33 @@
 
 All notable changes to `@launchdarkly/js-sdk-common` will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [2.28.0](https://github.com/tarqd/js-core/compare/js-sdk-common-v2.27.0...js-sdk-common-v2.28.0) (2026-09-29)
+
+
+### Features
+
+* add a reusable retry state controller for RETRY-conformant backoff ([#2045](https://github.com/tarqd/js-core/issues/2045)) ([721b559](https://github.com/tarqd/js-core/commit/721b559ff15bb13e3344921de9539e2663d0f0c8))
+* Add flag eval model for FDv2. ([#1124](https://github.com/tarqd/js-core/issues/1124)) ([028e63f](https://github.com/tarqd/js-core/commit/028e63f34eb0f11c5c0d8d078baf0ec378b9e8e0))
+* Add isNullish utility to validators. ([#1137](https://github.com/tarqd/js-core/issues/1137)) ([0064365](https://github.com/tarqd/js-core/commit/0064365ba575e743c90370a9a48e56e0f232b973))
+* Add oneOf validator to common validators. ([#1139](https://github.com/tarqd/js-core/issues/1139)) ([606fcf1](https://github.com/tarqd/js-core/commit/606fcf1919df8ad2aad35773c53df96a750a6c7d))
+* add X-LaunchDarkly-Instance-Id header to server-node SDK (SDK-2358) ([#1377](https://github.com/tarqd/js-core/issues/1377)) ([814dc0b](https://github.com/tarqd/js-core/commit/814dc0bfd6b152385f3a758f9eeca37a0f9f08e8))
+* FDv2 types, refined validators, and DataManager interface ([#1207](https://github.com/tarqd/js-core/issues/1207)) ([d7ccfc1](https://github.com/tarqd/js-core/commit/d7ccfc1a5359610d70751dc08e3b894bb7ecf334))
+* Move FDv1 fallback directive parsing to the shared package ([#1981](https://github.com/tarqd/js-core/issues/1981)) ([e7a3b66](https://github.com/tarqd/js-core/commit/e7a3b6647caf3210c9cea40e7818f164537aa50f))
+* Refactor FDV2 protocol handling. ([4570089](https://github.com/tarqd/js-core/commit/4570089cd478cc5811a9a1c207231a96fdb5b39a))
+
+
+### Bug Fixes
+
+* **common:** remove non-spec fields from FDv2 GoodbyeObject ([#1341](https://github.com/tarqd/js-core/issues/1341)) ([feb9aa7](https://github.com/tarqd/js-core/commit/feb9aa7f6217bc9b3a9794bc71867e14112ea928))
+* enabling eslint `ban-types` rule and fixed string typing ([#1313](https://github.com/tarqd/js-core/issues/1313)) ([f6d907f](https://github.com/tarqd/js-core/commit/f6d907f1a65abd0b41827f3c827e6dad896b16b1))
+* explicit return types and TS6 source compatibility fixes ([#1418](https://github.com/tarqd/js-core/issues/1418)) ([9c131a2](https://github.com/tarqd/js-core/commit/9c131a2e731c97a7fd4cf7ec1fe11efbbf49d6fb))
+* FDv2 - Support dynamic reconnect URL for streaming. Handle 'error' event types for SSE. ([#1252](https://github.com/tarqd/js-core/issues/1252)) ([4ef6cdd](https://github.com/tarqd/js-core/commit/4ef6cdd3f07a15e9a6b3b831defcf41d10e6334b))
+* Only redact anonymous contexts in custom events for server SDKs ([#1814](https://github.com/tarqd/js-core/issues/1814)) ([5a3b3fb](https://github.com/tarqd/js-core/commit/5a3b3fbc59e9a0b2d65221d65e54078ffa1bf433))
+* Preserve FDv2 protocol error listeners and stop misreporting server error frames ([#2028](https://github.com/tarqd/js-core/issues/2028)) ([3d80bef](https://github.com/tarqd/js-core/commit/3d80bef9f56872ed1c625ba1518aed2ebe30c1fd))
+* Redact anonymous context attributes in migration op and custom events ([#1809](https://github.com/tarqd/js-core/issues/1809)) ([c84ec48](https://github.com/tarqd/js-core/commit/c84ec485e33ef27cc34610ec838b5466f3a5c96e))
+* **server-node:** honor x-ld-fd-fallback directive in FDv2 initializer phase ([#1342](https://github.com/tarqd/js-core/issues/1342)) ([a80eaca](https://github.com/tarqd/js-core/commit/a80eacaafa6174e5f1b4fe21ba11534fdf1f92a8))
+* Stop format() from hanging on a trailing percent sign ([#2056](https://github.com/tarqd/js-core/issues/2056)) ([c5114ec](https://github.com/tarqd/js-core/commit/c5114ecf5dc32826f260744b0e4aa5c4a7f633d6))
+
 ## [2.27.0](https://github.com/launchdarkly/js-core/compare/js-sdk-common-v2.26.1...js-sdk-common-v2.27.0) (2026-09-29)
 
 

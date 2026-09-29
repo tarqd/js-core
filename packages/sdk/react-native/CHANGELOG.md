@@ -1,5 +1,33 @@
 # Changelog
 
+## [10.21.0](https://github.com/tarqd/js-core/compare/react-native-client-sdk-v10.20.4...react-native-client-sdk-v10.21.0) (2026-09-29)
+
+
+### Features
+
+* Add experimental FDv2 configuration (unused) ([#1169](https://github.com/tarqd/js-core/issues/1169)) ([c7130cc](https://github.com/tarqd/js-core/commit/c7130ccabe19a699b3c14dc949432ef1afb37b3d))
+* Add experimental FDv2 support for React Native. ([#1243](https://github.com/tarqd/js-core/issues/1243)) ([7ed2c08](https://github.com/tarqd/js-core/commit/7ed2c085cd35d35ffd6f48becb5a60f03b07ad1c))
+* Consolidate endpoint paths. Add FDv2 endpoints. ([#1125](https://github.com/tarqd/js-core/issues/1125)) ([297ef9d](https://github.com/tarqd/js-core/commit/297ef9d2793cdd750a9050674137257d6e18c809))
+* move bootstrap capability to js-client-common (SDK-1874) ([#1113](https://github.com/tarqd/js-core/issues/1113)) ([baa8ab4](https://github.com/tarqd/js-core/commit/baa8ab43898be51a498c2a8238e466f5194c2698))
+* Prepare FDv2 EAP for browser and React Native SDKs ([#1419](https://github.com/tarqd/js-core/issues/1419)) ([6ee9c51](https://github.com/tarqd/js-core/commit/6ee9c515fe9aaf999fd7f0eb722d6df9a2d208d8))
+* **react-native:** adding debug override plugin support ([#1410](https://github.com/tarqd/js-core/issues/1410)) ([99a96d2](https://github.com/tarqd/js-core/commit/99a96d2d73a98264e551074f66fb5d10155042c6))
+* **react-native:** no storage fallback to in-memory map ([#1281](https://github.com/tarqd/js-core/issues/1281)) ([cc86eab](https://github.com/tarqd/js-core/commit/cc86eabe18fd524472c7cf36847c0d757aecc6d1))
+* wire fdv1-fallback capability into node-client, browser, and react-native contract-test entities ([#1858](https://github.com/tarqd/js-core/issues/1858)) ([462c950](https://github.com/tarqd/js-core/commit/462c95098d2143802939cd010cfacd39e26a1c22))
+
+
+### Bug Fixes
+
+* Honor urlBuilder on React Native EventSource reconnect ([#1420](https://github.com/tarqd/js-core/issues/1420)) ([93bd3f8](https://github.com/tarqd/js-core/commit/93bd3f84d1c824fe1bea94f7760c586349c3dc3e))
+* **react-native:** `package.json` should declare esm format ([#1322](https://github.com/tarqd/js-core/issues/1322)) ([149ae73](https://github.com/tarqd/js-core/commit/149ae73c623cf7ccac6f7d7346059a80e8044280))
+* **sdk-client:** `executeAfterTrack` ordering ([58e063b](https://github.com/tarqd/js-core/commit/58e063bad4651e25beea644425bea23a20f4870f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-client-sdk-common bumped from 1.32.2 to 1.33.0
+
 ## [10.20.4](https://github.com/launchdarkly/js-core/compare/react-native-client-sdk-v10.20.3...react-native-client-sdk-v10.20.4) (2026-09-29)
 
 

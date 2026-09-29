@@ -2,6 +2,32 @@
 
 All notable changes to `@launchdarkly/node-server-sdk` will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org).
 
+## [9.14.0](https://github.com/tarqd/js-core/compare/node-server-sdk-v9.13.8...node-server-sdk-v9.14.0) (2026-09-29)
+
+
+### Features
+
+* add a custom proxyAgent option to the Node server SDK ([#1438](https://github.com/tarqd/js-core/issues/1438)) ([c74dae7](https://github.com/tarqd/js-core/commit/c74dae74e01fa2f36ec91086f53658d4644d9c9f))
+* add X-LaunchDarkly-Instance-Id header to server-node SDK (SDK-2358) ([#1377](https://github.com/tarqd/js-core/issues/1377)) ([814dc0b](https://github.com/tarqd/js-core/commit/814dc0bfd6b152385f3a758f9eeca37a0f9f08e8))
+* **sdk-server-common:** add support for custom base uris in FDv2 datasources  ([#1827](https://github.com/tarqd/js-core/issues/1827)) ([5d028c3](https://github.com/tarqd/js-core/commit/5d028c36ab308973957dff226839026994b70fd2))
+
+
+### Bug Fixes
+
+* add SOCKS proxy example and fixes warning logging and proxyAuth reporting ([#1786](https://github.com/tarqd/js-core/issues/1786)) ([a5b42ca](https://github.com/tarqd/js-core/commit/a5b42ca3bf7d0672bf303cf47036ea801f6b9093))
+* enabling eslint `ban-types` rule and fixed string typing ([#1313](https://github.com/tarqd/js-core/issues/1313)) ([f6d907f](https://github.com/tarqd/js-core/commit/f6d907f1a65abd0b41827f3c827e6dad896b16b1))
+* **sdk-client:** `executeAfterTrack` ordering ([58e063b](https://github.com/tarqd/js-core/commit/58e063bad4651e25beea644425bea23a20f4870f))
+* **sdk-server-common:** use subpath import for `semver` module ([#1885](https://github.com/tarqd/js-core/issues/1885)) ([2de6c8c](https://github.com/tarqd/js-core/commit/2de6c8cc39e6b7a4e4092af0731b2de124d56b94))
+* **server-node:** honor x-ld-fd-fallback directive in FDv2 initializer phase ([#1342](https://github.com/tarqd/js-core/issues/1342)) ([a80eaca](https://github.com/tarqd/js-core/commit/a80eacaafa6174e5f1b4fe21ba11534fdf1f92a8))
+* Wire timeout option through to flag polling and event delivery requests ([#1760](https://github.com/tarqd/js-core/issues/1760)) ([e18998e](https://github.com/tarqd/js-core/commit/e18998eb339a7edc1e059c2f6832afe2739b0bd6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common bumped from 2.21.6 to 2.22.0
+
 ## [9.13.8](https://github.com/launchdarkly/js-core/compare/node-server-sdk-v9.13.7...node-server-sdk-v9.13.8) (2026-09-29)
 
 

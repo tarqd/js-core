@@ -1,5 +1,41 @@
 # Changelog
 
+## [0.8.0](https://github.com/tarqd/js-core/compare/server-sdk-ai-vercel-v0.7.18...server-sdk-ai-vercel-v0.8.0) (2026-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Rename LDAIMetrics.usage and LDAIGraphMetrics.usage to .tokens ([#1366](https://github.com/tarqd/js-core/issues/1366))
+* Remove AIProvider deprecated methods and create*/init* aliases (AIC-2388) ([#1363](https://github.com/tarqd/js-core/issues/1363))
+* Build judge input as string and strip legacy judge config messages ([#1364](https://github.com/tarqd/js-core/issues/1364))
+* Add optional OTEL LLM instrumentation to provider packages ([#1122](https://github.com/tarqd/js-core/issues/1122))
+
+### Features
+
+* Add optional OTEL LLM instrumentation to provider packages ([#1122](https://github.com/tarqd/js-core/issues/1122)) ([1ca3ce7](https://github.com/tarqd/js-core/commit/1ca3ce7b42e274d4f2c9e338fab6996eaf1fd1be))
+* Remove AIProvider deprecated methods and create*/init* aliases (AIC-2388) ([#1363](https://github.com/tarqd/js-core/issues/1363)) ([ad66314](https://github.com/tarqd/js-core/commit/ad66314e403b83976987c54da9c6c70308c25078))
+* Rename LDAIMetrics.usage and LDAIGraphMetrics.usage to .tokens ([#1366](https://github.com/tarqd/js-core/issues/1366)) ([ff932b7](https://github.com/tarqd/js-core/commit/ff932b74c10307519dc9f913a4330a5b7d79438d))
+* replace VercelProvider with Runner protocol implementation (AIC-2388) ([#1339](https://github.com/tarqd/js-core/issues/1339)) ([d5a62de](https://github.com/tarqd/js-core/commit/d5a62def46b683d4c2e7de0c16ee7fc82e40b66a))
+* Support conversation history directly in AI Provider model runners ([#1371](https://github.com/tarqd/js-core/issues/1371)) ([b246631](https://github.com/tarqd/js-core/commit/b246631bfcaf7155dec52a1580cf4ffb329ebfaa))
+
+
+### Bug Fixes
+
+* add zod devDependency to Vercel provider (peer dep of ai v5) ([aab6226](https://github.com/tarqd/js-core/commit/aab62262800dfc0b9d4c3c6f9ee71a3f63519959))
+* Build judge input as string and strip legacy judge config messages ([#1364](https://github.com/tarqd/js-core/issues/1364)) ([c90034b](https://github.com/tarqd/js-core/commit/c90034b58a3b75d92269e7c485f38f1266208f08))
+* Bump peer dependencies ([#1128](https://github.com/tarqd/js-core/issues/1128)) ([85e8f43](https://github.com/tarqd/js-core/commit/85e8f4383bfc34e2d52d016f7ae20c8aa5dab912))
+* Make judge runners non-multi-turn ([#1383](https://github.com/tarqd/js-core/issues/1383)) ([3d8f488](https://github.com/tarqd/js-core/commit/3d8f488354a5ed590859c7fe96429a2ab9f79c01))
+* Update pre-release usage guidance ([#1098](https://github.com/tarqd/js-core/issues/1098)) ([07e3b5e](https://github.com/tarqd/js-core/commit/07e3b5ec500fb6d064d7d449e891b58054ac4af5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @launchdarkly/server-sdk-ai bumped from ^2.0.8 to ^3.0.0
+  * peerDependencies
+    * @launchdarkly/server-sdk-ai bumped from ^1.1.1 to ^3.0.0
+
 ## [0.7.18](https://github.com/launchdarkly/js-core/compare/server-sdk-ai-vercel-v0.7.17...server-sdk-ai-vercel-v0.7.18) (2026-09-29)
 
 

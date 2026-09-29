@@ -1,5 +1,87 @@
 # Changelog
 
+## [3.0.0](https://github.com/tarqd/js-core/compare/server-sdk-ai-v2.0.8...server-sdk-ai-v3.0.0) (2026-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Make AgentGraph traversal topological ([#1830](https://github.com/tarqd/js-core/issues/1830))
+* Remove bedrock-specific tracker method ([#1385](https://github.com/tarqd/js-core/issues/1385))
+* Remove `LDAIClient.agent` — use `LDAIClient.agentConfig` instead
+* Remove `LDAIClient.agents` — use `LDAIClient.agentConfigs` instead
+* Remove `LDAIClient.createChat` — use `LDAIClient.createModel` instead
+* Remove `LDAIClient.initChat` — use `LDAIClient.createModel` instead
+* Remove `ChatResponse` type and the `api/chat` module — use `RunnerResult` from `api/model` instead
+* Change `Judge.evaluateMessages` parameter type from `ChatResponse` to `RunnerResult` (method retained per AI SDK spec Requirement 1.1.3)
+* Remove `evaluationMetricKeys` (plural) field from `LDAIJudgeConfig` and `LDAIJudgeConfigDefault` — use `evaluationMetricKey` (singular) instead
+* Remove `LDAIConfigTracker.trackOpenAIMetrics` — use `tracker.trackMetricsOf(getAIMetricsFromResponse, fn)` from `@launchdarkly/server-sdk-ai-openai` instead
+* Remove `LDAIConfigTracker.trackVercelAISDKGenerateTextMetrics` — use `tracker.trackMetricsOf(getAIMetricsFromResponse, fn)` from `@launchdarkly/server-sdk-ai-vercel` instead
+* Remove `createOpenAiUsage` helper — use `getAIMetricsFromResponse` from `@launchdarkly/server-sdk-ai-openai` instead
+* Remove `createVercelAISDKTokenUsage` helper — use `getAIMetricsFromResponse`  from `@launchdarkly/server-sdk-ai-vercel` instead
+* Remove `LDAIClient.config` — use `LDAIClient.completionConfig` instead
+* Rename LDAIMetrics.usage and LDAIGraphMetrics.usage to .tokens ([#1366](https://github.com/tarqd/js-core/issues/1366))
+* Remove AIProvider deprecated methods and create*/init* aliases (AIC-2388) ([#1363](https://github.com/tarqd/js-core/issues/1363))
+* Build judge input as string and strip legacy judge config messages ([#1364](https://github.com/tarqd/js-core/issues/1364))
+* Use LDAIGraphMetricSummary for graph metric summary ([#1362](https://github.com/tarqd/js-core/issues/1362))
+* Flatten JudgeResponse and EvalScore into new LDJudgeResult ([#1284](https://github.com/tarqd/js-core/issues/1284))
+* Add per-execution runId, at-most-once tracking, and cross-process tracker resumption ([#1270](https://github.com/tarqd/js-core/issues/1270))
+
+### Features
+
+* add Evaluator class for judge orchestration ([#1331](https://github.com/tarqd/js-core/issues/1331)) ([54faa69](https://github.com/tarqd/js-core/commit/54faa69aa28333f92d943de79307611fc05e2cbe))
+* add ManagedAgent with evaluations support ([#1334](https://github.com/tarqd/js-core/issues/1334)) ([7f09c46](https://github.com/tarqd/js-core/commit/7f09c46cdec808ce9ebeb6487e6a2fa4fc817cbc))
+* add ManagedGraphResult, GraphMetricSummary, and ManagedAgentGraph ([#1335](https://github.com/tarqd/js-core/issues/1335)) ([09fa1db](https://github.com/tarqd/js-core/commit/09fa1dbb134ea43ab8664b5e7903eb85883a0ac2))
+* Add per-execution runId, at-most-once tracking, and cross-process tracker resumption ([#1270](https://github.com/tarqd/js-core/issues/1270)) ([fc25ab7](https://github.com/tarqd/js-core/commit/fc25ab7bd9577dbd1ea9826547793366a4e6814b))
+* add region to model type ([#1423](https://github.com/tarqd/js-core/issues/1423)) ([7db5df5](https://github.com/tarqd/js-core/commit/7db5df587812e8d9b0140d2b389f16d341d55cd7))
+* Add root-level tools map with customParameters to AI Config types ([#1295](https://github.com/tarqd/js-core/issues/1295)) ([487182b](https://github.com/tarqd/js-core/commit/487182b6a078b2aaf3868706d8f3c2709e8cc11c))
+* Change `Judge.evaluateMessages` parameter type from `ChatResponse` to `RunnerResult` (method retained per AI SDK spec Requirement 1.1.3) ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Flatten JudgeResponse and EvalScore into new LDJudgeResult ([#1284](https://github.com/tarqd/js-core/issues/1284)) ([aba1221](https://github.com/tarqd/js-core/commit/aba1221d3b3d9f4eff44d805ed1c5e9f4d088e4a))
+* Implement agent graph definitions ([#1282](https://github.com/tarqd/js-core/issues/1282)) ([e7d08e5](https://github.com/tarqd/js-core/commit/e7d08e5e3b84020e543fd54d40a8530ddc514f20))
+* implements _template methods for fetching non-interpolated config ([#1774](https://github.com/tarqd/js-core/issues/1774)) ([d808ca8](https://github.com/tarqd/js-core/commit/d808ca8c0bc1abb1061de1e2ee989c929ac1cc53))
+* introduce ManagedResult, RunnerResult, and LDAIMetricSummary ([#1332](https://github.com/tarqd/js-core/issues/1332)) ([5040122](https://github.com/tarqd/js-core/commit/5040122a5c6de88691820f02528550b983a14e58))
+* Remove `ChatResponse` type and the `api/chat` module — use `RunnerResult` from `api/model` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `createOpenAiUsage` helper — use `getAIMetricsFromResponse` from `@launchdarkly/server-sdk-ai-openai` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `createVercelAISDKTokenUsage` helper — use `getAIMetricsFromResponse`  from `@launchdarkly/server-sdk-ai-vercel` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `evaluationMetricKeys` (plural) field from `LDAIJudgeConfig` and `LDAIJudgeConfigDefault` — use `evaluationMetricKey` (singular) instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIClient.agent` — use `LDAIClient.agentConfig` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIClient.agents` — use `LDAIClient.agentConfigs` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIClient.config` — use `LDAIClient.completionConfig` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIClient.createChat` — use `LDAIClient.createModel` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIClient.initChat` — use `LDAIClient.createModel` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIConfigTracker.trackOpenAIMetrics` — use `tracker.trackMetricsOf(getAIMetricsFromResponse, fn)` from `@launchdarkly/server-sdk-ai-openai` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove `LDAIConfigTracker.trackVercelAISDKGenerateTextMetrics` — use `tracker.trackMetricsOf(getAIMetricsFromResponse, fn)` from `@launchdarkly/server-sdk-ai-vercel` instead ([86951b0](https://github.com/tarqd/js-core/commit/86951b0f66eed3f374d06c40e858dca04a837fda))
+* Remove AIProvider deprecated methods and create*/init* aliases (AIC-2388) ([#1363](https://github.com/tarqd/js-core/issues/1363)) ([ad66314](https://github.com/tarqd/js-core/commit/ad66314e403b83976987c54da9c6c70308c25078))
+* Remove bedrock-specific tracker method ([#1385](https://github.com/tarqd/js-core/issues/1385)) ([f7dbee8](https://github.com/tarqd/js-core/commit/f7dbee806a15e8b9d5a6b7b49a461e16e5e757fe))
+* Rename LDAIMetrics.usage and LDAIGraphMetrics.usage to .tokens ([#1366](https://github.com/tarqd/js-core/issues/1366)) ([ff932b7](https://github.com/tarqd/js-core/commit/ff932b74c10307519dc9f913a4330a5b7d79438d))
+* Replace OpenAIProvider with Runner protocol implementation (AIC-2388) ([#1337](https://github.com/tarqd/js-core/issues/1337)) ([e32a955](https://github.com/tarqd/js-core/commit/e32a955c583db1bc382e2e0f3f459d459bc35984))
+* **server-ai:** stamp modelKey and modelVersion on AI usage events (AIC-2858) ([#1794](https://github.com/tarqd/js-core/issues/1794)) ([a91a1e7](https://github.com/tarqd/js-core/commit/a91a1e7927262dcdbe1098b33095f529c48f7e8c))
+* simplify evaluation schema to flat score/reasoning shape ([#1286](https://github.com/tarqd/js-core/issues/1286)) ([c132e9f](https://github.com/tarqd/js-core/commit/c132e9f44c8113cc5b795edfa6330f26c38081a6))
+* Support fall back to model.parameters.tools when root tools absent ([#1330](https://github.com/tarqd/js-core/issues/1330)) ([2c65c61](https://github.com/tarqd/js-core/commit/2c65c61d1fd4df9b13d1e9b2f3bd055d4a77ec22))
+
+
+### Bug Fixes
+
+* Add support for graph metric tracking ([#1269](https://github.com/tarqd/js-core/issues/1269)) ([034a89d](https://github.com/tarqd/js-core/commit/034a89d3a8d8b718aecb459190f94f6e2ab14a3d))
+* Build judge input as string and strip legacy judge config messages ([#1364](https://github.com/tarqd/js-core/issues/1364)) ([c90034b](https://github.com/tarqd/js-core/commit/c90034b58a3b75d92269e7c485f38f1266208f08))
+* Improve usage reporting ([#1108](https://github.com/tarqd/js-core/issues/1108)) ([7a003b7](https://github.com/tarqd/js-core/commit/7a003b78d7de2f91bc9f58b231fb5f660eb09329))
+* Make AgentGraph traversal topological ([#1830](https://github.com/tarqd/js-core/issues/1830)) ([d240b07](https://github.com/tarqd/js-core/commit/d240b07bd584f282b8588bfe111c1361e09d2328))
+* Make defaultValue optional with a disabled default ([#1144](https://github.com/tarqd/js-core/issues/1144)) ([e46769b](https://github.com/tarqd/js-core/commit/e46769b872727cf6a1539f60a7e467c701769daf))
+* Make judge runners non-multi-turn ([#1383](https://github.com/tarqd/js-core/issues/1383)) ([3d8f488](https://github.com/tarqd/js-core/commit/3d8f488354a5ed590859c7fe96429a2ab9f79c01))
+* Move ManagedAgentGraph alongside other managed types ([#1384](https://github.com/tarqd/js-core/issues/1384)) ([22dd76d](https://github.com/tarqd/js-core/commit/22dd76d61a830d7ad37ae0136b59d1971973b424))
+* Remove pre-release caution note from server-ai README ([#1387](https://github.com/tarqd/js-core/issues/1387)) ([0bafcbf](https://github.com/tarqd/js-core/commit/0bafcbfc22d5c39c3664d38bdb47183824a068e5))
+* **server-ai:** unpin peer depedency reference ([#1788](https://github.com/tarqd/js-core/issues/1788)) ([dbc2bd5](https://github.com/tarqd/js-core/commit/dbc2bd5d8af9bcd7e4ffdc3e439cb6e4c7985a38))
+* Update pre-release usage guidance ([#1098](https://github.com/tarqd/js-core/issues/1098)) ([07e3b5e](https://github.com/tarqd/js-core/commit/07e3b5ec500fb6d064d7d449e891b58054ac4af5))
+* Use LDAIGraphMetricSummary for graph metric summary ([#1362](https://github.com/tarqd/js-core/issues/1362)) ([76a4bf2](https://github.com/tarqd/js-core/commit/76a4bf278999c81b27ce1aa29a3c1cb42e113fbc))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * @launchdarkly/js-server-sdk-common bumped from 2.21.6 to 2.22.0
+  * peerDependencies
+    * @launchdarkly/js-server-sdk-common bumped from ^2.0.0 to ^2.22.0
+
 ## [2.0.8](https://github.com/launchdarkly/js-core/compare/server-sdk-ai-v2.0.7...server-sdk-ai-v2.0.8) (2026-09-29)
 
 

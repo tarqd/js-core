@@ -8,6 +8,41 @@ All notable changes to `@launchdarkly/js-server-sdk-common` will be documented i
   * dependencies
     * @launchdarkly/js-sdk-common bumped from 2.3.0 to 2.3.1
 
+## [2.22.0](https://github.com/tarqd/js-core/compare/js-server-sdk-common-v2.21.6...js-server-sdk-common-v2.22.0) (2026-09-29)
+
+
+### Features
+
+* add X-LaunchDarkly-Instance-Id header to server-node SDK (SDK-2358) ([#1377](https://github.com/tarqd/js-core/issues/1377)) ([814dc0b](https://github.com/tarqd/js-core/commit/814dc0bfd6b152385f3a758f9eeca37a0f9f08e8))
+* Refactor FDV2 protocol handling. ([4570089](https://github.com/tarqd/js-core/commit/4570089cd478cc5811a9a1c207231a96fdb5b39a))
+* **sdk-server-common:** add support for custom base uris in FDv2 datasources  ([#1827](https://github.com/tarqd/js-core/issues/1827)) ([5d028c3](https://github.com/tarqd/js-core/commit/5d028c36ab308973957dff226839026994b70fd2))
+* warn that payload filtering has no effect with FDv2 ([#1984](https://github.com/tarqd/js-core/issues/1984)) ([5e37aca](https://github.com/tarqd/js-core/commit/5e37aca49398ff01aa0c71b75d106699a1461cd3))
+
+
+### Bug Fixes
+
+* ability to handle FDv1 `flagValues` shorthand map to FDv2FiledataInitializer ([#1811](https://github.com/tarqd/js-core/issues/1811)) ([cbdaf6e](https://github.com/tarqd/js-core/commit/cbdaf6ec020e0567c640ce73c9978c1252c7ff35))
+* custom featureStores in FDv2 does not get wrapped as TransactionalFeatureStore. ([#1812](https://github.com/tarqd/js-core/issues/1812)) ([c687a97](https://github.com/tarqd/js-core/commit/c687a9702db83d0b1093c8c794bee6bca89c856a))
+* Disable event processor background flush timers for edge clients ([#1797](https://github.com/tarqd/js-core/issues/1797)) ([bac7f81](https://github.com/tarqd/js-core/commit/bac7f81e07bcd0bbbf2abcfd15cb6ca7f3e512cb))
+* enabling eslint `ban-types` rule and fixed string typing ([#1313](https://github.com/tarqd/js-core/issues/1313)) ([f6d907f](https://github.com/tarqd/js-core/commit/f6d907f1a65abd0b41827f3c827e6dad896b16b1))
+* explicit return types and TS6 source compatibility fixes ([#1418](https://github.com/tarqd/js-core/issues/1418)) ([9c131a2](https://github.com/tarqd/js-core/commit/9c131a2e731c97a7fd4cf7ec1fe11efbbf49d6fb))
+* Log the cached-data evaluation warning only once per client ([#2015](https://github.com/tarqd/js-core/issues/2015)) ([0bb2164](https://github.com/tarqd/js-core/commit/0bb2164fb9e60817af3a5b11e714d14bc7681cdc))
+* **node-server-sdk:** No FDv1 fallback when using custom datasystem ([#1088](https://github.com/tarqd/js-core/issues/1088)) ([5111112](https://github.com/tarqd/js-core/commit/5111112b6ddba8107edb8d455de0b1da114b2af6))
+* Only redact anonymous contexts in custom events for server SDKs ([#1814](https://github.com/tarqd/js-core/issues/1814)) ([5a3b3fb](https://github.com/tarqd/js-core/commit/5a3b3fbc59e9a0b2d65221d65e54078ffa1bf433))
+* **persistent-store:** add error logs for upsert ([#1985](https://github.com/tarqd/js-core/issues/1985)) ([5ff1cf2](https://github.com/tarqd/js-core/commit/5ff1cf240f6c197c38cc1caceabadf12b3c89ea5))
+* Preserve FDv2 protocol error listeners and stop misreporting server error frames ([#2028](https://github.com/tarqd/js-core/issues/2028)) ([3d80bef](https://github.com/tarqd/js-core/commit/3d80bef9f56872ed1c625ba1518aed2ebe30c1fd))
+* **sdk-server-common:** use subpath import for `semver` module ([#1885](https://github.com/tarqd/js-core/issues/1885)) ([2de6c8c](https://github.com/tarqd/js-core/commit/2de6c8cc39e6b7a4e4092af0731b2de124d56b94))
+* server sdk could send user agent headers under a different header name ([#1860](https://github.com/tarqd/js-core/issues/1860)) ([669662a](https://github.com/tarqd/js-core/commit/669662a304c10bcb2b683e0c7ea990f43679916b))
+* **server-node:** honor x-ld-fd-fallback directive in FDv2 initializer phase ([#1342](https://github.com/tarqd/js-core/issues/1342)) ([a80eaca](https://github.com/tarqd/js-core/commit/a80eacaafa6174e5f1b4fe21ba11534fdf1f92a8))
+* Wire timeout option through to flag polling and event delivery requests ([#1760](https://github.com/tarqd/js-core/issues/1760)) ([e18998e](https://github.com/tarqd/js-core/commit/e18998eb339a7edc1e059c2f6832afe2739b0bd6))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-sdk-common bumped from 2.27.0 to 2.28.0
+
 ## [2.21.6](https://github.com/launchdarkly/js-core/compare/js-server-sdk-common-v2.21.5...js-server-sdk-common-v2.21.6) (2026-09-29)
 
 

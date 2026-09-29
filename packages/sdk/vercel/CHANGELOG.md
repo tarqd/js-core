@@ -20,6 +20,21 @@ All notable changes to the LaunchDarkly SDK for Vercel Edge Config will be docum
   * dependencies
     * @launchdarkly/js-server-sdk-common-edge bumped from 2.2.1 to 2.2.2
 
+## [1.3.63](https://github.com/tarqd/js-core/compare/vercel-server-sdk-v1.3.62...vercel-server-sdk-v1.3.63) (2026-09-29)
+
+
+### Bug Fixes
+
+* Bump vercel SDK to latest  ([#1832](https://github.com/tarqd/js-core/issues/1832)) ([b0167a2](https://github.com/tarqd/js-core/commit/b0167a20b3ac599a231946b03efd9f790cf27d39))
+* **sdk-server-common:** use subpath import for `semver` module ([#1885](https://github.com/tarqd/js-core/issues/1885)) ([2de6c8c](https://github.com/tarqd/js-core/commit/2de6c8cc39e6b7a4e4092af0731b2de124d56b94))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common-edge bumped from 2.6.35 to 2.6.36
+
 ## [1.3.62](https://github.com/launchdarkly/js-core/compare/vercel-server-sdk-v1.3.61...vercel-server-sdk-v1.3.62) (2026-09-29)
 
 

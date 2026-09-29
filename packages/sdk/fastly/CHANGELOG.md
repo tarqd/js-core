@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.2.30](https://github.com/tarqd/js-core/compare/fastly-server-sdk-v0.2.29...fastly-server-sdk-v0.2.30) (2026-09-29)
+
+
+### Bug Fixes
+
+* Accept eventsUri option in Fastly SDK init() ([#1791](https://github.com/tarqd/js-core/issues/1791)) ([18deecd](https://github.com/tarqd/js-core/commit/18deecddc53714850a31a8d796720fb101535af2))
+* Disable event processor background flush timers for edge clients ([#1797](https://github.com/tarqd/js-core/issues/1797)) ([bac7f81](https://github.com/tarqd/js-core/commit/bac7f81e07bcd0bbbf2abcfd15cb6ca7f3e512cb))
+* Do not cache rejected KV loads in Fastly EdgeFeatureStore ([#1796](https://github.com/tarqd/js-core/issues/1796)) ([8f51339](https://github.com/tarqd/js-core/commit/8f51339c6d09d2ac6f86636f2b61ae4adeb7d16e))
+* explicit return types and TS6 source compatibility fixes ([#1418](https://github.com/tarqd/js-core/issues/1418)) ([9c131a2](https://github.com/tarqd/js-core/commit/9c131a2e731c97a7fd4cf7ec1fe11efbbf49d6fb))
+* Export BasicLogger, LDContext, and LDOptions from the Fastly SDK ([#1987](https://github.com/tarqd/js-core/issues/1987)) ([f5c3170](https://github.com/tarqd/js-core/commit/f5c3170469c8aee4d821f163116eb11492ce1999))
+
+
+### Performance Improvements
+
+* Import only used crypto-js submodules in Fastly SDK ([#1795](https://github.com/tarqd/js-core/issues/1795)) ([5c12f19](https://github.com/tarqd/js-core/commit/5c12f19f5c0b6a73ad12b8ca1e1450a38a45f9a0))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-server-sdk-common bumped from 2.21.6 to 2.22.0
+
 ## [0.2.29](https://github.com/launchdarkly/js-core/compare/fastly-server-sdk-v0.2.28...fastly-server-sdk-v0.2.29) (2026-09-29)
 
 

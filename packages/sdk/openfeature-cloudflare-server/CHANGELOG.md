@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.0.0](https://github.com/tarqd/js-core/compare/openfeature-cloudflare-server-v1.0.2...openfeature-cloudflare-server-v1.0.0) (2026-09-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* Promote @launchdarkly/openfeature-cloudflare-server to stable v1 ([#1873](https://github.com/tarqd/js-core/issues/1873))
+
+### Features
+
+* Promote @launchdarkly/openfeature-cloudflare-server to stable v1 ([#1873](https://github.com/tarqd/js-core/issues/1873)) ([4f9b349](https://github.com/tarqd/js-core/commit/4f9b3496e81d5d2d552a4e36c870f913137703fd))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/openfeature-js-server-common bumped from 2.0.3 to 3.0.0
+  * devDependencies
+    * @launchdarkly/cloudflare-server-sdk bumped from 2.7.39 to 2.7.40
+  * peerDependencies
+    * @launchdarkly/cloudflare-server-sdk bumped from ^2.7.0 to ^2.7.40
+
 ## [1.0.2](https://github.com/launchdarkly/js-core/compare/openfeature-cloudflare-server-v1.0.1...openfeature-cloudflare-server-v1.0.2) (2026-09-29)
 
 

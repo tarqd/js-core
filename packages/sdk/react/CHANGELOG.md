@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.2.0](https://github.com/tarqd/js-core/compare/react-sdk-v4.1.21...react-sdk-v4.2.0) (2026-09-29)
+
+
+### Features
+
+* adding isomorphic provider to bridge client and server ([#1218](https://github.com/tarqd/js-core/issues/1218)) ([d766f39](https://github.com/tarqd/js-core/commit/d766f39c0d178cc66c80644c3cecddb6e7131c93))
+* **js-client-sdk:** add ability to customize storage impl ([#1404](https://github.com/tarqd/js-core/issues/1404)) ([77864cb](https://github.com/tarqd/js-core/commit/77864cb04f737c8aab4476422a2a2422c7be978c))
+* pre-release of `@launchdarkly/react-sdk` ([#1201](https://github.com/tarqd/js-core/issues/1201)) ([69f4790](https://github.com/tarqd/js-core/commit/69f47902f5327d3d7c7f1bbca66a3d0ff95e7452))
+* release-react-sdk-v4 ([#1238](https://github.com/tarqd/js-core/issues/1238)) ([a0eb24d](https://github.com/tarqd/js-core/commit/a0eb24d05e34237c852d039ead46f33e31a95c4c))
+* support static client component rendering ([#1227](https://github.com/tarqd/js-core/issues/1227)) ([6b3a100](https://github.com/tarqd/js-core/commit/6b3a1001844cdeccb378a402283673bf35760369))
+
+
+### Bug Fixes
+
+* adding wrapper name for react client ([#1199](https://github.com/tarqd/js-core/issues/1199)) ([f92a8f9](https://github.com/tarqd/js-core/commit/f92a8f9d9b7f15c344745be13ce16d6a03a0c126))
+* Bump vercel SDK to latest  ([#1832](https://github.com/tarqd/js-core/issues/1832)) ([b0167a2](https://github.com/tarqd/js-core/commit/b0167a20b3ac599a231946b03efd9f790cf27d39))
+* **deps:** update dependency next to v16.1.5 [security] ([#1164](https://github.com/tarqd/js-core/issues/1164)) ([929a385](https://github.com/tarqd/js-core/commit/929a385568b7b25e2340c5e7b4f654e6b6d8d907))
+* **deps:** update dependency next to v16.1.7 [security] ([#1196](https://github.com/tarqd/js-core/issues/1196)) ([1572be1](https://github.com/tarqd/js-core/commit/1572be1adbb25eb12102e5f03dd058d62423afb3))
+* **deps:** update dependency next to v16.2.11 [security] ([#1822](https://github.com/tarqd/js-core/issues/1822)) ([19454cd](https://github.com/tarqd/js-core/commit/19454cd5a2b9fc3729f05ab40f5091ba070a16b0))
+* **deps:** update dependency next to v16.2.3 [security] ([#1263](https://github.com/tarqd/js-core/issues/1263)) ([10f582a](https://github.com/tarqd/js-core/commit/10f582a460342f6352735b1cd3f93af1f57ba303))
+* **deps:** update dependency next to v16.2.6 [security] ([#1374](https://github.com/tarqd/js-core/issues/1374)) ([24487f4](https://github.com/tarqd/js-core/commit/24487f49d2f0b87d50af18d807b98a3dc5b11b8f))
+* react prerelease docs ([#1215](https://github.com/tarqd/js-core/issues/1215)) ([bc69bdd](https://github.com/tarqd/js-core/commit/bc69bdd16f423aa84d23c255a13c6b959fa4446e))
+* **react-sdk:** `basicLogger` was not re-exported causing compile time errors ([#1843](https://github.com/tarqd/js-core/issues/1843)) ([459c891](https://github.com/tarqd/js-core/commit/459c891a718ad52d2f34a7b6b9b53e3c858459cc))
+* **react-sdk:** double evaluation on client side init ([#1229](https://github.com/tarqd/js-core/issues/1229)) ([6a4c42f](https://github.com/tarqd/js-core/commit/6a4c42f1bc2e73efa16b1317d10dbc6026d53628))
+* **sdk-client:** `executeAfterTrack` ordering ([58e063b](https://github.com/tarqd/js-core/commit/58e063bad4651e25beea644425bea23a20f4870f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @launchdarkly/js-client-sdk bumped from ^4.10.4 to ^5.0.0
+    * @launchdarkly/js-server-sdk-common bumped from ^2.21.6 to ^2.22.0
+
 ## [4.1.21](https://github.com/launchdarkly/js-core/compare/react-sdk-v4.1.20...react-sdk-v4.1.21) (2026-09-29)
 
 
